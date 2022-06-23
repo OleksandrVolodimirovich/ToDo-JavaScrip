@@ -9,6 +9,7 @@
 rel="stylesheet" 
 integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
 crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
   <title>App-ToDo</title>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -17,7 +18,13 @@ crossorigin="anonymous">
   </script>
 </head>
 <body>
-  <div id="list-1" class="conteiner"></div>
+  <div class="container">
+    <nav class="nav">
+      <a class="nav__link" href="#">Список-1</a>
+      <a class="nav__link" href="list-2.html">Список-2</a>
+      <a class="nav__link" href="list-3.html">Список-3</a></nav>
+  </div>
+  <div id="list-1" class="container"></div>
 
   <script src="./main.js"></script>
 </body>
