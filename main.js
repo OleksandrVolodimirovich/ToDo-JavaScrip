@@ -62,10 +62,17 @@ const createTodoItem = (name) => {
 
 const completeTodoItem = (item, btn) => {
   btn.addEventListener('click', ()=> {
-    item.classList.add('list-group-item-success');
+    item.classList.toggle('list-group-item-success');
   });
 };
 
+const deleteTodoItem = (item, btn) => {
+  btn.addEventListener('click', ()=> {
+    if(confirm('Ви впевнені?!')){
+      item.remove();
+    }
+  });
+};
 
 
 function createTodoApp(conteiner, title, key){
@@ -83,6 +90,8 @@ function createTodoApp(conteiner, title, key){
     if(!appForm.input.value){
       return;
     }
+    completeTodoItem(todoItem.todoItem, todoItem.doneBtn);
+    deleteTodoItem(todoItem.todoItem, todoItem.deleteBtn);
 
     appList.append(todoItem.todoItem);
     appForm.input.value = '';
