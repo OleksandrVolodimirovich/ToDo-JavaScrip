@@ -13,6 +13,12 @@ const createTodoForm = () => {
   const addButton = document.createElement('button');
   const wrapper = document.createElement('div');
 
+  addButton.disabled = !input.value.length;
+
+  input.addEventListener('input', ()=> {
+    addButton.disabled = !input.value.length;
+  });
+
   form.classList.add('input-group', 'mb-3');
   input.classList.add('form-control');
   input.placeholder = 'Введіть назву роботи';
@@ -162,6 +168,7 @@ function createTodoApp(conteiner, title, key){
 
     appList.append(todoItem.todoItem);
     appForm.input.value = '';
+    appForm.addButton.disabled = !appForm.addButton.disabled;
   });
 }
 
